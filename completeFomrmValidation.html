@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Submit form</title>
+	<style type="text/css">
+		body{
+			height: 800px;
+			width: auto;
+			margin: auto;
+			background: #eaeaea;  
+			font-family: 'Open Sans', sans-serif;			
+			border: 10px dotted #CCC;
+			display: inline;
+		}
+
+		.page-container{
+		  height: 600px;
+		  width: 40%;
+		  margin:1% 0 0 30%;
+		  padding: 0 auto;
+		  background: #FFFFFF;			
+		}
+
+		.page-left {
+		  width:47.5%; 
+		  float:left;
+		  border-right: 1px dotted #CCC;
+		  box-sizing: border-box;
+		  padding: 0px 15px 0px 0px;
+		  margin-left: 20px
+		}
+
+		.page-right {
+		  width:48.5%;
+		  float:right;
+		  box-sizing: border-box;
+		  padding: 0px 0px 0px 15px;
+		}
+
+		.form-group {
+		  overflow: hidden;
+		  clear: both;
+		}
+
+		form {
+		  border-radius: 5px;
+		  width:auto;
+		  margin:0 auto;
+		  margin-bottom: 20px;
+		  text-align: center;
+		  font-size: 14px;
+		  color: white;
+		  background-color: #f6aa93;
+		  overflow: hidden;
+		}
+
+		textarea {
+		  border-radius: 0px 5px 5px 0px;
+		  border: 1px solid #EEE;
+		  margin: 0;
+		  width: 75%;
+		  height: 90px; 
+		  float: left;
+		  padding: 0px 15px;
+		}
+
+		.btnsubmit{
+		  background-color: #81BDA4;
+		  color: #FFF;
+		  text-align: center;
+		  width: 100%;
+		  border:0;
+		  padding: 17px 25px;
+		  border-radius: 0px 0px 5px 5px;
+		  cursor: pointer;
+		  margin-top: 40px;
+		  font-size: 18px;
+		}
+	</style>
+	<script>
+		function validateForm() {
+			var userName = document.getElementById('Username'),
+				email = document.getElementById('txtEmail'),
+				pwd = document.getElementById('Password'),
+				address = document.getElementById('address'),
+				officeAddress = document.getElementById('caddress'),
+				pincode = document.getElementById('postcard'),
+				city = document.getElementById('city'),
+				mobile = document.getElementById('phoneno'),
+				eventType = document.getElementById('fun'),
+				subject = document.getElementById('sub'),
+				description = document.getElementById('msg');
+
+			var usernameFilter 		= /^[a-zA-Z0-9_\.\-]/,
+				passwordFilter 		= /^[a-zA-Z0-9_\.\-]/,
+				addressFilter 		= /^[a-zA-Z0-9_\.\-]/,
+				officeAddressFilter = /^[a-zA-Z0-9_\.\-]/,
+				pincodeFilter 		= /[0-9]/,
+				cityFilter 			= /[a-zA-Z0-9_\.\-]/,
+				mobileFilter		= /[0-9]/,
+				everntTypeFilter    = /[a-zA-Z0-9_\.\-]/,
+				subjectFilter       = /[a-zA-Z0-9_\.\-]/,
+				descriptionFilter   = /[a-zA-Z0-9_\.\-]/;
+
+			if(userName !== null || !usernameFilter.test(userName.value)){
+				alert('Please enter valid username');
+				return false;
+			} else if (email !== null || !emailFilter.test(email.value)){				
+					alert('please enter valid email');
+					return false;
+			}
+			else if(pwd !== null || !passwordFilter.test(pwd.value)){				
+					alert('please enter valid password');				
+					return false;
+			}
+			else if(address !== null || !addressFilter.test(address.value)){				
+					alert('please enter valid address');				
+				return false;
+			}
+			else if(officeAddress !== null || !officeAddressFilter.test(officeAddress.value)){				
+					alert('please enter valid office address');
+					return false;				
+			}
+			else if (pincode !== null || !pincodeFilter.test(pincode.value)){				
+				alert('please enter valid pincode');				
+				return false;
+			}
+			else if (city !== null || !cityFilter.test(city.value)){				
+					alert('please enter valid city name');				
+				return false;
+			}
+			else if (mobile !== null || !mobileFilter.test(mobile.value)){				
+					alert('please enter a valid mobile number');				
+				return false;
+			}
+			else if(eventType !== null || !everntTypeFilter.test(eventType.value)) {				
+					alert('enter a valide event name');				
+				return false;
+			}
+			else if (subject !== null || !subjectFilter.test(subjectFilter.value)){				
+					alert('enter a valide subject');				
+				return false;
+			}
+			else if(description !== null || !descriptionFilter.test(descriptionFilter.value)){				
+					alert('enter a valide content');				
+				return false;
+			}
+			 else {
+				return true;				
+			}
+		}
+
+</script>	
+</head>
+<body>
+	<div class="page-container">
+		<form method="post" id="logInForm" onSubmit="validateForm()">
+		<h4>Should you have any questions, please do not hesitate to contact me :</h4>		
+		<div class="page-left">
+			<div class="form-group">
+			        <p>Name</p>
+			           <input type="text" name="name" id="Username" size="20" value="" />
+			</div> 
+			<div class="form-group">
+			        <p>E-mail</p>			        
+				        <input type="text" name="txtEmail" id="txtEmail" value="" />						        				
+			</div> 
+			<div class="form-group">
+			        <p>Password</p>
+			            <input type="password" name="password" id="Password" size="20" value="" />					
+			</div> 			
+			<div class="form-group">
+			        <p>Address</p>			        
+				        <input type="text" name="address" id="address" value="" />					
+			</div> 
+			<div class="form-group">
+			        <p>Company Address</p>			    
+				        <input type="text" name="caddress" id="caddress" value="" />					
+			</div> 
+			<div class="form-group">
+			        <p>Poostcode</p>			       
+				        <input type="text" name="postcard" id="postcard" value=""/>					
+			</div> 
+		</div>
+		<div class="page-right">
+			<div class="form-group">
+			        <p>city</p>			    
+				        <input type="text" name="city" id="city" value=""/>					
+			</div> 
+			<div class="form-group">
+			        <p>phone number</p>			  
+				        <input type="text" name="phoneno" id="phoneno" value=""/>					
+			</div> 
+			<div class="form-group">
+			        <p>Function</p>			     
+				        <input type="text" name="fun" id="fun" value="" />					
+			</div> 
+			<div class="form-group">
+			        <p>Subject</p>			      
+				        <input type="text" name="sub" id="sub" value="" />					
+			</div> 							
+		</div>	
+		<div class="form-group">
+		<input type='submit' name='submit'  class="btnsubmit"/>	
+		</div>	
+		</form>
+</div>
+</body>
+</html>

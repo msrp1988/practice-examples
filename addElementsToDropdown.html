@@ -1,0 +1,27 @@
+<!Doctype html>
+<html>
+<head></head>
+<title></title>
+
+<body>
+		<input type=" text" name="name" id="EnterInput" value = "" >
+		<button type="button" name="button" id="submitBtn" >submit</button>
+		<select id="addElements"></select> 
+
+<script type="text/javascript" name = "clickme">
+	(function addElements(){
+		var btnRef = document.getElementById('submitBtn');
+		btnRef.addEventListener("click", function(){ 
+
+		var inputRef = document.getElementById('EnterInput');
+		var outputRef = document.getElementById('addElements');
+		var inputValue = inputRef.value;
+
+		 var option = document.createElement('option');
+		 option.innerText = inputValue;
+		 outputRef.appendChild(option); 
+		});
+	})();
+</script>
+</body>
+</html>

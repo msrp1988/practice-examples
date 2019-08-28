@@ -1,0 +1,35 @@
+<!Doctype html>
+<html>
+<head></head>
+<title></title>
+
+<body>
+		
+  <select id="selectMan">
+    <option>Select Man</option>
+  </select>
+  <select id="selectWoman">
+    <option>Select Woman</option>
+  </select>
+<script type="text/javascript" >
+var selectMan = document.getElementById("selectMan");
+var selectWoman = document.getElementById("selectWoman");
+var man = ["billgates", "stevejobs", "markjukarbarg", "charlesbabaze", "aryabhatta"];
+var woman = ["indranuie","smruthierani","sarojininaidu","jansirani","padmavathi"];
+for(var i = 0; i < man.length; i++) {
+    var opt = man[i];
+    var el = document.createElement("option");
+    el.textContent = opt;
+    el.value = opt;
+    selectMan.appendChild(el);
+}	
+for(var i = 0; i < woman.length; i++) {
+    var opt = woman[i];
+    var el = document.createElement("option");
+    el.textContent = opt;
+    el.value = opt;
+    selectWoman.appendChild(el);
+}	
+</script>
+</body>
+</html>

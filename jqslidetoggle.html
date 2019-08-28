@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jquery slide up toggle</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+	<style type="text/css">
+		#panel,#flip{
+			padding: 5px;
+			text-align: center;
+			background-color: orange;
+			border: 2px solig grey;
+		}
+		#panel {  
+    padding: 50px;  
+    display:none;  
+}  
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#flip").click(function(){
+			$("#panel").slideToggle("slow");		
+			});
+		});
+	</script>
+	<div id ="flip"> click to slide toggle pannel</div>
+	<div id ="panel"> welcome to jquere slide toggle effect</div>
+</body>
+</html>
